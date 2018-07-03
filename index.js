@@ -34,6 +34,10 @@ app.post('/login', (req, res) => {
     sub: user.id,
     username: user.username
   },'mysupersecretkey', {expiresIn: '3 hours'});
+
+  res
+  .status(200)
+  .send({access_token: token})
 });
 
 app.get('/status', (req, res) => {
