@@ -29,7 +29,12 @@ app.post('/login', (req, res) => {
     .send("User not Found");
     return;
   }
-})
+
+  const token = jwt.sign({
+    sub: user.id,
+    username: user.username
+  },'mysupersecretkey', {expiresIn: '3 hours'});
+});
 
 app.get('/status', (req, res) => {
   const localTime = (new Date()).toLocaleTimeString();
