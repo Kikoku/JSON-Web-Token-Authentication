@@ -8,6 +8,10 @@ app.use(bodyParser.json());
 
 app.post('/login', (req, res) => {
   const user = req.body.username;
+
+  res
+  .status(200)
+  .send(`You logged in with ${user}`)
 })
 
 app.get('/status', (req, res) => {
