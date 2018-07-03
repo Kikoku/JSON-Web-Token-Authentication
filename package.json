@@ -1,5 +1,7 @@
 {
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.16.3"
+  },
   "name": "json-web-token-authentication",
   "version": "1.0.0",
   "main": "index.js",
