@@ -17,6 +17,10 @@ app.post('/login', (req, res) => {
     .send("You need a username and password");
     return;
   }
+
+  const user = users.find((u) => {
+    return u.username === req.body.username && u.password === req.body.password
+  });
 })
 
 app.get('/status', (req, res) => {
