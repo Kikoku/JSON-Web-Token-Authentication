@@ -21,6 +21,13 @@ app.post('/login', (req, res) => {
   const user = users.find((u) => {
     return u.username === req.body.username && u.password === req.body.password
   });
+
+  if(!user) {
+    res
+    .status(401)
+    .send("User not Found");
+    return;
+  }
 })
 
 app.get('/status', (req, res) => {
