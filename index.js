@@ -19,6 +19,11 @@ app.get('/resource', (req, res) => {
   .send("Public resource, you can see this");
 })
 
+app.get('/resource/secret', (req, res) => {
+  res
+  .status(200)
+  .send("Secret resource, you should be logged in to see this");
+})
 app.post('/login', (req, res) => {
   if(!req.body.username || !req.body.password) {
     res
