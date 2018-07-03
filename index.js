@@ -6,16 +6,17 @@ const PORT = process.env.PORT || 8888;
 const users = [
   {id: 1, username: 'admin', password: 'admin'},
   {id: 2, username: 'guest', password: 'guest'}
-]
+];
 
 app.use(bodyParser.json());
 
 app.post('/login', (req, res) => {
-  const user = req.body.username;
-
-  res
-  .status(200)
-  .send(`You logged in with ${user}`)
+  if(!req.body.username || !req.body.password) {
+    res
+    .status(400)
+    .send("You need a username and password");
+    return;
+  }
 })
 
 app.get('/status', (req, res) => {
