@@ -3,6 +3,10 @@ const bodyParser = require('body-parser');
 
 const app = express();
 const PORT = process.env.PORT || 8888;
+const users = [
+  {id: 1, username: 'admin', password: 'admin'},
+  {id: 2, username: 'guest', password: 'guest'}
+]
 
 app.use(bodyParser.json());
 
