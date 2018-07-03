@@ -3,6 +3,10 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 8888;
 
+app.post('/login', (req, res) => {
+  const user = req.body.username;
+})
+
 app.get('/status', (req, res) => {
   const localTime = (new Date()).toLocaleTimeString();
 
